@@ -1,3 +1,5 @@
+import FastAverageColor from 'fast-average-color';
+
 /**
  * Extend object a with the properties of object b.
  * If there's a conflict, object b takes precedence.
@@ -279,4 +281,20 @@ export const getRemainingHeight = ( element, height = 0 ) => {
 
 	return height;
 
+}
+
+export function getComplimentaryColor ( imgurl ) {
+	var fac = new FastAverageColor();
+	console.log(imgurl);
+	fac.getColorAsync(imgurl, {
+		ignoredColor: [255, 255, 255, 255] // white
+	})
+		.then(function(color) {
+			console.log('Average color', color);
+			return color;
+		})
+		.catch(function(e) {
+			console.log(e);
+			return e;
+		});
 }

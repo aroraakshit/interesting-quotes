@@ -1,4 +1,4 @@
-import { queryAll } from '../utils/util.js'
+import { queryAll,getComplimentaryColor } from '../utils/util.js'
 import { colorToRgb, colorBrightness } from '../utils/color.js'
 
 /**
@@ -13,7 +13,6 @@ export default class Backgrounds {
 	}
 
 	render() {
-
 		this.element = document.createElement( 'div' );
 		this.element.className = 'backgrounds';
 		this.Reveal.getRevealElement().appendChild( this.element );
@@ -37,12 +36,11 @@ export default class Backgrounds {
 		this.Reveal.getHorizontalSlides().forEach( slideh => {
 
 			let backgroundStack = this.createBackground( slideh, this.element );
-
+			
 			// Iterate over all vertical slides
 			queryAll( slideh, 'section' ).forEach( slidev => {
 
 				this.createBackground( slidev, backgroundStack );
-
 				backgroundStack.classList.add( 'stack' );
 
 			} );

@@ -1338,7 +1338,7 @@ export default function( revealElement, options ) {
 			}
 
 		}
-
+		// currentSlide.querySelectorAll('.blockquote').style.color = Util.getComplimentaryColor(currentSlide.getAttribute('data-background'));
 	}
 
 	/**
