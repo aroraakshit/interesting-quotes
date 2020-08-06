@@ -1,3 +1,3 @@
 # interesting-quotes
 
-Published [here](https://aroraakshit.github.io/interesting-quotes/index.html). Just a collection of interesting quotes visualized using [Impress.js](https://github.com/impress/impress.js) framework. Code stored in `gh-pages` branch.
+Published [here](https://aroraakshit.github.io/interesting-quotes). Just a collection of interesting quotes visualized using [Reveal.js](https://revealjs.com/) framework. Code stored in `gh-pages` branch.
