@@ -283,18 +283,10 @@ export const getRemainingHeight = ( element, height = 0 ) => {
 
 }
 
-export function getComplimentaryColor ( imgurl ) {
+export function getComplimentaryColor ( element1, imgurl ) {
 	var fac = new FastAverageColor();
-	console.log(imgurl);
-	fac.getColorAsync(imgurl, {
-		ignoredColor: [255, 255, 255, 255] // white
-	})
-		.then(function(color) {
-			console.log('Average color', color);
-			return color;
-		})
-		.catch(function(e) {
-			console.log(e);
-			return e;
-		});
+	var color = fac.getColorAsync(imgurl).then(function(color){
+		console.log('Average color', color);
+		element1.style.color = color.hex;
+	});
 }
