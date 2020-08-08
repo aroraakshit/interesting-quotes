@@ -1339,7 +1339,7 @@ export default function( revealElement, options ) {
 
 		}
 		currentSlide.querySelectorAll('p').forEach(function (element1) {
-			Util.getComplimentaryColor(element1, currentSlide.getAttribute('data-background'));
+			Util.getComplimentaryColor(element1, currentSlide, currentSlide.getAttribute('data-background'));
 		});
 	}
 

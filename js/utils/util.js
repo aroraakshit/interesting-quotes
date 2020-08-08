@@ -283,17 +283,19 @@ export const getRemainingHeight = ( element, height = 0 ) => {
 
 }
 
-export function getComplimentaryColor ( element1, imgurl ) {
+export function getComplimentaryColor ( element1, slide, imgurl ) {
 	var fac = new FastAverageColor();
 	var color = fac.getColorAsync(imgurl).then(function(color){
 		console.log('Average color', color);
 		let r = color.value[0]
 		let g = color.value[1]
 		let b = color.value[2]
+		let a = 0.40
 		let r_ = Math.max(r,g,b) + Math.min(r,g,b) - r
 		let g_ = Math.max(r,g,b) + Math.min(r,g,b) - g
 		let b_ = Math.max(r,g,b) + Math.min(r,g,b) - b
-		element1.style.color = "rgb("+[r_,g_,b_].join(',')+")";
+		element1.style = "color: rgb("+[255,255,255].join(',')+"); text-shadow: 0 0 10px "+color.hex;
 		console.log('Complimentary color', "rgb("+[r_,g_,b_].join(',')+")");
+		slide.querySelectorAll('blockquote')[0].style.background = "rgba("+[r_,g_,b_,a].join(',')+")";
 	});
 }
