@@ -4,4 +4,3 @@ Published [here](https://aroraakshit.github.io/interesting-quotes). Just a colle
 
 ToDos:
 - [ ] Randomize sequence of the presentation.
-- [ ] Add more quotes.
